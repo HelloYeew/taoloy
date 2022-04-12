@@ -15,7 +15,13 @@
 	<h1>Recipe List</h1>
 	<!-- TODO: Make it a card -->
 	{#each recipes as rec}
-		<h2>{rec.name}</h2>
+		<div class="card">
+			<div class="card-content" style="color: black;">
+				<h3>{rec.name}</h3>
+				<p>Ingredients : {rec.ingredients}</p>
+				<p>Instructions : {rec.instructions}</p>
+			</div>
+		</div>
 	{/each}
 	<button type="button" class="btn btn-primary" on:click={navigateBack}>
 		Back
