@@ -1,5 +1,12 @@
 <script>
 	import CoffeeRecipe from "./CoffeeRecipe.svelte";
+	import RecipeList from "./RecipeList.svelte";
+
+	let listPage = false;
+
+	function navigateToList() {
+		listPage = true;
+	}
 </script>
 
 <main>
@@ -12,7 +19,11 @@
 	<h2 class="text-light">Don't know what coffee you want to drink today?</h2>
 	<h2 class="text-light">Let us think!</h2>
 
-	<CoffeeRecipe />
+	{#if !listPage}
+		<CoffeeRecipe on:navigate={navigateToList} />
+	{:else}
+		<RecipeList />
+	{/if}
 </main>
 
 <style>

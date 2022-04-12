@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     // make a list of coffee recipes
     let recipes = [
         {
@@ -27,6 +29,7 @@
     // random coffee recipe
     let recipe = recipes[Math.floor(Math.random() * recipes.length)];
     let ingredients = recipe.ingredients;
+    const dispatch = createEventDispatcher();
 
     function randomRecipe() {
         let newRecipe;
@@ -35,6 +38,10 @@
         } while (newRecipe === recipe);
         recipe = newRecipe;
         ingredients = recipe.ingredients;
+    }
+
+    function navigateToList() {
+        dispatch("navigate");
     }
 </script>
 
@@ -52,6 +59,9 @@
     <button type="button" class="btn btn-primary" on:click={randomRecipe}
         >Random a new one!</button
     >
+    <button type="button" class="btn btn-info" on:click={navigateToList}>
+        Get me a list
+    </button>
 </section>
 
 <style>
