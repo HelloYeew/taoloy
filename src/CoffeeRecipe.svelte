@@ -57,5 +57,13 @@
 <style>
     main {
         background-color: inherit;
+        /*
+        CSS Variable from Bootstrap
+        */
+        color: var(--bs-light);
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
     }
 </style>
