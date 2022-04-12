@@ -1,12 +1,15 @@
 <script>
-	export let name;
+	import CoffeeRecipe from "./CoffeeRecipe.svelte";
 </script>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
 
 <style>
 
 </style>
+
+<h1>Taoloy</h1>
+<h2>Don't know what coffee you want to drink today?</h2>
+<h2>Let us think!</h2>
+
+<CoffeeRecipe />
+
+<button type="button" class="btn btn-primary" on:click={CoffeeRecipe}>Random a new one!</button>
