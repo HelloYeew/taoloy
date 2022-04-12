@@ -38,14 +38,24 @@
     }
 </script>
 
-<h1>Coffee Recipes</h1>
-<h2>{recipe.name}</h2>
-<h3>Ingredients</h3>
-<ul>
-    {#each ingredients as ingredient}
-        <li>{ingredient}</li>
-    {/each}
-</ul>
-<h3>Instructions</h3>
-<p>{recipe.instructions}</p>
-<button type="button" class="btn btn-primary" on:click={randomRecipe}>Random a new one!</button>
+<main>
+    <h1>Coffee Recipes</h1>
+    <h2>{recipe.name}</h2>
+    <h3>Ingredients</h3>
+    <ul>
+        {#each ingredients as ingredient}
+            <li>{ingredient}</li>
+        {/each}
+    </ul>
+    <h3>Instructions</h3>
+    <p>{recipe.instructions}</p>
+    <button type="button" class="btn btn-primary" on:click={randomRecipe}
+        >Random a new one!</button
+    >
+</main>
+
+<style>
+    main {
+        background-color: inherit;
+    }
+</style>
