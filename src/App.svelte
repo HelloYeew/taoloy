@@ -7,6 +7,10 @@
 	function navigateToList() {
 		listPage = true;
 	}
+
+	function navigateBack() {
+		listPage = false;
+	}
 </script>
 
 <main>
@@ -22,7 +26,7 @@
 	{#if !listPage}
 		<CoffeeRecipe on:navigate={navigateToList} />
 	{:else}
-		<RecipeList />
+		<RecipeList on:navigate={navigateBack}/>
 	{/if}
 </main>
 

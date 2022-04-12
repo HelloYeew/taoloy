@@ -2,6 +2,13 @@
 	// TODO: Fix this.
 	// Put recipes in another file
 	import { recipes } from "./recipes";
+	import {createEventDispatcher} from "svelte";
+	const dispatch = createEventDispatcher();
+
+	function navigateBack() {
+		dispatch("navigate");
+	}
+
 </script>
 
 <section>
@@ -10,6 +17,9 @@
 	{#each recipes as rec}
 		<h2>{rec.name}</h2>
 	{/each}
+	<button type="button" class="btn btn-primary" on:click={navigateBack}>
+		Back
+	</button>
 </section>
 
 <style>
