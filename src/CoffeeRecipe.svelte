@@ -32,7 +32,7 @@
         let newRecipe;
         do {
             newRecipe = recipes[Math.floor(Math.random() * recipes.length)];
-        } while (newRecipe == recipe);
+        } while (newRecipe === recipe);
         recipe = newRecipe;
         ingredients = recipe.ingredients;
     }
@@ -48,6 +48,4 @@
 </ul>
 <h3>Instructions</h3>
 <p>{recipe.instructions}</p>
-<button type="button" class="btn btn-primary" on:click={randomRecipe}
-    >Random a new one!</button
->
+<button type="button" class="btn btn-primary" on:click={randomRecipe}>Random a new one!</button>

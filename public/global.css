@@ -2,4 +2,9 @@
 
 * {
 	font-family: 'Chakra Petch', sans-serif;
+	text-align: center;
+}
+
+html {
+	background-color: #ff0000;
 }
