@@ -38,7 +38,7 @@
     }
 </script>
 
-<main>
+<section>
     <h1>Coffee Recipes</h1>
     <h2>{recipe.name}</h2>
     <h3>Ingredients</h3>
@@ -52,10 +52,10 @@
     <button type="button" class="btn btn-primary" on:click={randomRecipe}
         >Random a new one!</button
     >
-</main>
+</section>
 
 <style>
-    main {
+    section {
         background-color: inherit;
         /*
         CSS Variable from Bootstrap

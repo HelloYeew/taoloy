@@ -7,4 +7,9 @@
 
 html, body {
 	background-color: #ff0000 !important;
+	height: 100%;
+}
+
+body {
+	display: flex;
 }
