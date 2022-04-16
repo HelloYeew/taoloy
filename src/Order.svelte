@@ -3,6 +3,7 @@
 	const dispatch = createEventDispatcher();
 
 	let isOrdered = false;
+	let isProcessing = true;
 
 	function navigateToBack() {
 		dispatch("navigate");
@@ -10,6 +11,9 @@
 
 	function order() {
 		isOrdered = true;
+		setTimeout(() => {
+			isProcessing = false;
+		}, 3000);
 	}
 </script>
 
@@ -23,6 +27,8 @@
 		<button on:click={order} type="button">Delivery App 2</button>
 		<button on:click={order} type="button">Delivery App 3</button>
 		<p>Please wait a while until we got your order.</p>
+	{:else if isProcessing}
+		<h2>Please wait...</h2>
 	{:else}
 		<h2>Your order is ready</h2>
 		<p>Latte from Somlek's Cafe</p>
