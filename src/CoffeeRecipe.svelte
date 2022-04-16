@@ -32,7 +32,7 @@
         {/each}
     </ul>
     <h3>Instructions</h3>
-    <p>{recipe.instructions}</p>
+    <pre>{recipe.instructions}</pre>
     <button type="button" class="btn btn-primary" on:click={randomRecipe}
         >Random a new one!</button
     >
@@ -52,5 +52,9 @@
     ul {
         list-style: none;
         padding-left: 0;
+    }
+    pre {
+        font-family: inherit;
+        font-size: inherit;
     }
 </style>
