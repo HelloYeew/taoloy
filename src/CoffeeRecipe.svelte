@@ -20,6 +20,10 @@
     function navigateToList() {
         dispatch("navigate");
     }
+
+    function navigateToOrder() {
+        dispatch("order");
+    }
 </script>
 
 <section>
@@ -38,6 +42,9 @@
     >
     <button type="button" class="btn btn-info" on:click={navigateToList}>
         Get me a list
+    </button>
+    <button type="button" class="btn btn-dark" on:click={navigateToOrder}>
+        Order now.
     </button>
 </section>
 

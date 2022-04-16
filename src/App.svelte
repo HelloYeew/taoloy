@@ -1,15 +1,21 @@
 <script>
 	import CoffeeRecipe from "./CoffeeRecipe.svelte";
 	import RecipeList from "./RecipeList.svelte";
+	import Order from "./Order.svelte";
 
-	let listPage = false;
+	// RECIPE | LIST | ORDER
+	let currentPage = "RECIPE";
 
 	function navigateToList() {
-		listPage = true;
+		currentPage = "LIST";
 	}
 
 	function navigateBack() {
-		listPage = false;
+		currentPage = "RECIPE";
+	}
+
+	function navigateToOrder() {
+		currentPage = "ORDER";
 	}
 </script>
 
@@ -23,10 +29,12 @@
 	<h2 class="text-light">Don't know what coffee you want to drink today?</h2>
 	<h2 class="text-light">Let us think!</h2>
 
-	{#if !listPage}
-		<CoffeeRecipe on:navigate={navigateToList} />
+	{#if currentPage == "RECIPE"}
+		<CoffeeRecipe on:navigate={navigateToList} on:order={navigateToOrder} />
+	{:else if currentPage == "LIST"}
+		<RecipeList on:navigate={navigateBack} />
 	{:else}
-		<RecipeList on:navigate={navigateBack}/>
+		<Order on:navigate={navigateBack} />
 	{/if}
 </main>
 
